@@ -4,15 +4,29 @@
 	"description": "MVC boiler plate with NodeJS",
 	"main": "index.js",
 	"scripts": {
-		"start": "nodemon ./index.js"
+		"dev": "nodemon ./index.js",
+		"start": "concurrently \"npm run dev\" \"npm run watch \"",
+		"watch": "webpack --w --mode development",
+		"stop": "taskkill -F -IM node.exe"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"axios": "^0.18.0",
+		"body-parser": "^1.19.0",
+		"concurrently": "^4.1.0",
 		"express": "^4.17.0",
-		"pug": "^2.0.3"
+		"mysql2": "^1.6.5",
+		"pug": "^2.0.3",
+		"sequelize": "^5.8.6",
+		"sweetalert2": "^8.11.1"
 	},
 	"devDependencies": {
-		"nodemon": "^1.19.0"
+		"@babel/core": "^7.4.5",
+		"@babel/preset-env": "^7.4.5",
+		"babel-loader": "^8.0.6",
+		"nodemon": "^1.19.0",
+		"webpack": "^4.32.0",
+		"webpack-cli": "^3.3.2"
 	}
 }
